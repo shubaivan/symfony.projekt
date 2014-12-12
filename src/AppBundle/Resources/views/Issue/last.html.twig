@@ -1,0 +1,46 @@
+{% extends 'AppBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    последние вопросы
+{% endblock %}
+
+{% block styles %}
+    <link href="{{ asset('bundles/app/style/comment/last.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+    <div class="comment-article">
+        <h3>
+            {{ issues|length }} последних вопросов
+        </h3>
+        <ul>
+            {% for issue in issues %}
+                <li>
+                    <div class="comment">
+                        <div class="info-block">
+                            <p>
+                                <b>Автор:</b> {{ issue.author }}
+                                <br />
+                                <b>Дата создания:</b> {{ issue.createdAt|date("d.m.Y H:i:s") }}
+                            </p>
+                        </div>
+                        <div class="text">
+                            <p>
+                                <b>Вопросов:</b> {{ issue.text }}
+                            </p>
+                        </div>
+                        <div class="link_to_article">
+                            <b>Проект: </b><a href="{{ path("view_post", { "slug" : issue.post.slugPost}) }}">{{ issue.post.title }}</a>
+                        </div>
+                    </div>
+                </li>
+            {% else %}
+                <li>
+                    <h3>
+                        На данный момент нет коментов
+                    </h3>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

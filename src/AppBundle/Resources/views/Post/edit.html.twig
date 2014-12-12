@@ -1,0 +1,45 @@
+{% extends 'AppBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    Редактировать проект
+{% endblock %}
+
+{% block styles %}
+    <link href="{{ asset('bundles/app/style/post/editpost.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form role="form" method="POST">
+            <fieldset>
+                <legend>Редактировать проект</legend>
+
+                <div>
+                    {{ form_row(form.title) }}
+                    <div id="clear"></div>
+                </div>
+
+                <div>
+                    {{ form_row(form.text) }}
+                    <div id="clear"></div>
+                </div>
+
+                <div>
+                    {{ form_row(form.author) }}
+                    <div id="clear"></div>
+                </div>
+
+                <div>
+                    {{ form_row(form.tag) }}
+                    <div id="clear"></div>
+                </div>
+
+                {{ form_rest(form) }}
+
+                <div>
+                    <input type="submit" value="Редактировать проект">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

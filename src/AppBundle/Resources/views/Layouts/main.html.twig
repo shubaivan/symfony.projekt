@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} | Стена</title>
+
+        <link href="{{ asset('bundles/app/style/common.css') }}" rel="stylesheet" />
+
+
+        <script src="{{ asset('bundles/app/js/jquery.js') }}" ></script>
+        <script src="{{ asset('bundles/app/js/common.js') }}" ></script>
+
+        {% block styles %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div id="webber">
+            <header>
+               {% include "AppBundle:Layouts:header.html.twig" %}
+            </header>
+
+            <div id="webber_content">
+                <div id="content">
+                    {% block content %}
+                    {% endblock %}
+                    <div id="clear"></div>
+                </div>
+
+                <footer>
+                    Wall - created by <a href="https://github.com/shubaivan/symfony.projekt">ShubaIvan</a>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

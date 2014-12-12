@@ -1,0 +1,46 @@
+{% extends 'AppBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    Создание проекта
+{% endblock %}
+
+{% block styles %}
+    <link href="{{ asset('bundles/app/style/post/createpost.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+    <form role="form" method="POST" id="create_post">
+        <fieldset>
+            <legend>Создание проекта</legend>
+            <div>
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title) }}
+                <div id="clear"></div>
+            </div>
+
+            <div>
+                {{ form_label(form.text) }}
+                {{ form_widget(form.text) }}
+                <div id="clear"></div>
+            </div>
+
+            <div>
+                {{ form_label(form.author) }}
+                {{ form_widget(form.author) }}
+                <div id="clear"></div>
+            </div>
+
+            <div>
+                {{ form_label(form.tag) }}
+                {{ form_widget(form.tag) }}
+                <div id="clear"></div>
+
+                {{ form_rest(form) }}
+            </div>
+
+            <div>
+                <input type="submit" value="создать проект">
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'AppBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block styles %}
+    <link href="{{ asset('bundles/app/style/post/fullpost.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+    <div class="webber-article">
+        <div class="control-block">
+            <a href="{{ path('edit_post', {'slug':post.getSlugPost }) }}">Редактировать</a>
+            <a href="{{ path('delete_post', {'slug':post.getSlugPost }) }}" id="delete_post">Удалить</a>
+        </div>
+
+        <div class="title">
+            <a href="{{ path('view_post', { 'slug':post.getSlugPost }) }}">{{ post.title }}</a>
+        </div>
+        <div class="info-block">
+            <p>
+                Дата создания: <b>{{ post.createdAt|date("d.m.Y H:i:s") }}</b><br>
+                Дата обновления: <b>{{ post.updatedAt|date("d.m.Y H:i:s") }}</b><br>
+                Созданно автором: <b>{{ post.author }}</b><br>
+                Вопросы: <b>{{ post.issue|length }}</b>
+            </p>
+        </div>
+        <div class="tag-block">
+            <p>
+                Теги:
+                {% for tag in post.tag %}
+                    <a href="{{ path('tag_page', {'slug': tag.hashSlug }) }}">{{ tag.hashTag|hashTag }}</a>
+                {% endfor %}
+            </p>
+
+        </div>
+        <div class="text">
+            <p>{{ post.text }}</p>
+        </div>
+    </div>
+    <div class="comment-article">
+        <h3>
+            Вопросы:
+        </h3>
+        <ul id="category_list">
+            {% for issue in post.issue|reverse %}
+                <li>
+                    <div class="comment">
+                        <div class="info-block">
+                            <p>
+                                Добавил автор: <b>{{ issue.author }}</b></br>
+                                Дата создания: <b>{{ issue.createdAt|date("d.m.Y H:i:s") }}</b>
+                            </p>
+                        </div>
+
+                        <div class="text">
+                            <p>
+                                {{ issue.text }}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            {% else %}
+                <li>
+                    <h3>Нет вопросов</h3>
+                </li>
+            {% endfor %}
+        </ul>
+
+
+        <div>
+            <h3>создать вопрос:</h3>
+            <form id="comment_add" role="form" action="{{ path("issue_add", {"slug" : post.slugPost}) }}" method="POST">
+                <div>
+                    {{ form_row(form.author) }}
+                </div>
+
+                <div class="text">
+                    {{ form_row(form.text) }}
+                    <div id="clear"></div>
+                </div>
+
+                {{ form_rest(form) }}
+
+                <div>
+                    <input type="submit" value="Добавить вопрос">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
