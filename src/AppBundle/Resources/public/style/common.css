@@ -12,9 +12,9 @@ html, body{
 
 #webber > header{
     margin: 0;
-    background-color: #50B7DC;
+    background-color: #ade69f;
     height: 50px;
-    border: 1px solid #2693ba;
+    border: 1px solid #010405;
 }
 
 #webber > header ul{
