@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="redmine">AppBundle\Service\Redmine</parameter>
+
+    </parameters>
+
+    <services>
+        <service id="my_redmine" class="%redmine%">
+
+            <argument type="string">https://redmine.ekreative.com</argument>
+            <argument type="string">2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c</argument>
+        </service>
+        <service id="appbundle.twig.appbundle_extension" class="AppBundle\Twig\AppBundleExtension">
+            <tag name="twig.extension" />
+        </service>
+    </services>
+</container>
+
+
+
+

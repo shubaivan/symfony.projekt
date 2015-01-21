@@ -1,5 +1,11 @@
-services:
-    appbundle.twig.appbundle_extension:
-        class: AppBundle\Twig\AppBundleExtension
-        tags:
-            - { name: twig.extension }
+#services:
+#    appbundle.twig.appbundle_extension:
+#        class: AppBundle\Twig\AppBundleExtension
+#        tags:
+#            - { name: twig.extension }
+#services:
+#    my_redmine:
+#        class: \AppBundle\Service\Redmine
+#        arguments:
+#                [https://redmine.ekreative.com]
+#                [2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c]
