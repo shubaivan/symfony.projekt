@@ -5,14 +5,15 @@
 
     <parameters>
         <parameter key="redmine">AppBundle\Service\Redmine</parameter>
-
+        <parameter key="url">https://redmine.ekreative.com</parameter>
+        <parameter key="apikey">2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c</parameter>
     </parameters>
 
     <services>
         <service id="my_redmine" class="%redmine%">
 
-            <argument type="string">https://redmine.ekreative.com</argument>
-            <argument type="string">2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c</argument>
+            <argument type="string">%url%</argument>
+            <argument type="string">%apikey%</argument>
         </service>
         <service id="appbundle.twig.appbundle_extension" class="AppBundle\Twig\AppBundleExtension">
             <tag name="twig.extension" />
