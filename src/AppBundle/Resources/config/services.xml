@@ -10,14 +10,16 @@
     </parameters>
 
     <services>
-        <service id="my_redmine" class="%redmine%">
 
+        <service id="my_redmine" class="%redmine%">
             <argument type="string">%url%</argument>
             <argument type="string">%apikey%</argument>
         </service>
+
         <service id="appbundle.twig.appbundle_extension" class="AppBundle\Twig\AppBundleExtension">
             <tag name="twig.extension" />
         </service>
+
     </services>
 </container>
 

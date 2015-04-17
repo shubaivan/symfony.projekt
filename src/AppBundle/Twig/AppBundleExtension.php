@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\Twig;
 
 class AppBundleExtension extends \Twig_Extension
