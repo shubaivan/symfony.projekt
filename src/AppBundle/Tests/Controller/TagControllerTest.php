@@ -13,6 +13,6 @@ class TagControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/tag/symfony');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertTrue($crawler->filter('html:contains("Список проектов тегу symfony")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("Список проектов тегу")')->count() > 0);
     }
 }
