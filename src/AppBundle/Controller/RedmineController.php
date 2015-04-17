@@ -25,9 +25,9 @@ class RedmineController extends Controller
     {
         $config = array('https://redmine.ekreative.com', '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c');
         $redmine = new Redmine($config);
-        $overdueissues = $redmine->getIssues("?query_id=10");
+        $redmine->getIssues("?query_id=1");
         return array(
-            "overdueissues" => $overdueissues,
+            "redmine" => $redmine,
         );
     }
 
