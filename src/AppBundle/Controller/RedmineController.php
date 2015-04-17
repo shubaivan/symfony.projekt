@@ -13,6 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Service\Redmine;
+use AppBundle\Service\Client;
 
 class RedmineController extends Controller
 {
@@ -61,6 +62,30 @@ class RedmineController extends Controller
         return array(
             "client" => $client,
         );
+    }
+
+    /**
+     * @Route("/client", name="redmine")
+     * @Method({"GET"})
+     * @Template()
+     */
+    public function clientAction()
+    {
+        $url = 'https://redmine.ekreative.com';
+        $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
+        $httpAuthString = 'test';
+
+        $client = new Client($url, $apiKey, $httpAuthString);
+        $issueList = $client->api('issue')->all(array(
+            'limit' => 3
+        ));
+
+        foreach ($issueList['issues'] as $issue) {
+
+            $fullIssue = $client->api('issue')->show($issue['id'], ['include' => 'journals']);
+            print_r($fullIssue);
+
+        }
     }
 
 

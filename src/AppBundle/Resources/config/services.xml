@@ -5,11 +5,16 @@
 
     <parameters>
         <parameter key="redmine">AppBundle\Service\Redmine</parameter>
+        <parameter key="client">AppBundle\Service\Client</parameter>
     </parameters>
 
     <services>
 
         <service id="my_redmine" class="%redmine%">
+
+        </service>
+
+        <service id="my_client" class="%client%">
 
         </service>
 
