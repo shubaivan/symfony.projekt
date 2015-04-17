@@ -18,6 +18,6 @@ class AppBundleExtension extends \Twig_Extension
 
     public function getName()
     {
-        return "appbundle_extension";
+        return "app_bundle_extension";
     }
 }
