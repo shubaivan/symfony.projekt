@@ -23,7 +23,10 @@ class RedmineController extends Controller
      */
     public function indexAction()
     {
-        $config = array('https://redmine.ekreative.com', '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c');
+        $url = 'https://redmine.ekreative.com';
+        $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
+
+        $config = array($url, $apiKey);
         $redmine = new Redmine($config);
         $redmine->getIssues("?query_id=1");
         return array(
