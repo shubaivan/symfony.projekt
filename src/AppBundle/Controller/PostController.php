@@ -169,6 +169,7 @@ class PostController extends Controller
             'limit' => 1000
         ]);
         var_dump($client);
+
         return array(
             "client" => $client,
             );

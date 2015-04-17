@@ -9,7 +9,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
 use AppBundle\Entity\Tag;
 use AppBundle\Form\Type\AddTagType;
 
-
 /**
  * @Route("/tag")
  */

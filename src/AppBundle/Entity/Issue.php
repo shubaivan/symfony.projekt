@@ -47,7 +47,7 @@ class Issue
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -57,7 +57,7 @@ class Issue
     /**
      * Set author
      *
-     * @param string $author
+     * @param  string $author
      * @return Issue
      */
     public function setAuthor($author)
@@ -70,7 +70,7 @@ class Issue
     /**
      * Get author
      *
-     * @return string 
+     * @return string
      */
     public function getAuthor()
     {
@@ -80,7 +80,7 @@ class Issue
     /**
      * Set text
      *
-     * @param string $text
+     * @param  string $text
      * @return Issue
      */
     public function setText($text)
@@ -93,7 +93,7 @@ class Issue
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {

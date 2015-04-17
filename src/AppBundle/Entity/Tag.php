@@ -50,7 +50,7 @@ class Tag
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -60,7 +60,7 @@ class Tag
     /**
      * Set hashTag
      *
-     * @param string $hashTag
+     * @param  string $hashTag
      * @return Tag
      */
     public function setHashTag($hashTag)
@@ -73,7 +73,7 @@ class Tag
     /**
      * Get hashTag
      *
-     * @return string 
+     * @return string
      */
     public function getHashTag()
     {
@@ -83,7 +83,7 @@ class Tag
     /**
      * Set hashSlug
      *
-     * @param string $hashSlug
+     * @param  string $hashSlug
      * @return Tag
      */
     public function setHashSlug($hashSlug)
@@ -96,7 +96,7 @@ class Tag
     /**
      * Get hashSlug
      *
-     * @return string 
+     * @return string
      */
     public function getHashSlug()
     {
@@ -106,7 +106,7 @@ class Tag
     /**
      * Add post
      *
-     * @param \AppBundle\Entity\Post $post
+     * @param  \AppBundle\Entity\Post $post
      * @return Tag
      */
     public function addPost(\AppBundle\Entity\Post $post)
@@ -129,7 +129,7 @@ class Tag
     /**
      * Get post
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPost()
     {

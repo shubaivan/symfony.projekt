@@ -24,12 +24,13 @@ class RedmineController extends Controller
     public function indexAction()
     {
 
-        $config = $this -> get('my_redmine');
+        $config = $this->get('my_redmine');
 //        $config->url = 'https://redmine.ekreative.com';
 //        $config->apikey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
         $redmine = new Redmine($config);
 
         $overdueissues = $redmine->getIssues("?query_id=10");
+
         return array(
             "overdueissues" => $overdueissues,
         );
