@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "13f34dcfbe734308c48adbcac49b0cd2",
+    "hash": "84a0f2ea932f4bb63d36e5244a8b6082",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1389,12 +1389,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kbsali/php-redmine-api.git",
-                "reference": "159689ef587bcc319b78ad4a1e70813bb6f69d4c"
+                "reference": "a222eb1242e5c4d564bef22949fcb68ca8e11374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kbsali/php-redmine-api/zipball/159689ef587bcc319b78ad4a1e70813bb6f69d4c",
-                "reference": "159689ef587bcc319b78ad4a1e70813bb6f69d4c",
+                "url": "https://api.github.com/repos/kbsali/php-redmine-api/zipball/a222eb1242e5c4d564bef22949fcb68ca8e11374",
+                "reference": "a222eb1242e5c4d564bef22949fcb68ca8e11374",
                 "shasum": ""
             },
             "require": {
@@ -1427,7 +1427,7 @@
                 "api",
                 "redmine"
             ],
-            "time": "2014-11-10 14:42:55"
+            "time": "2015-04-01 14:59:16"
         },
         {
             "name": "kriswallsmith/assetic",
