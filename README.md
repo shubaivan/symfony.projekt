@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/shubaivan/symfony.projekt.svg?branch=develop)](https://travis-ci.org/shubaivan/symfony.projekt)
 Symfony projekt Wall
 1. List of projects
 2. Questions to the project
