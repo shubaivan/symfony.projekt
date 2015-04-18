@@ -24,6 +24,7 @@ class AddPostType extends AbstractType
             ->add('title')
             ->add('text')
             ->add('author')
+            ->add('thumbnail', 'file')
             ->add('tag', 'entity', [
                 'class' => 'AppBundle:Tag',
                 'choices' => new GetTagType($tag),
@@ -35,6 +36,8 @@ class AddPostType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\Post',
+            'intention' => 'appbundle_post',
+            'csrf_protection' => true
         ));
     }
 

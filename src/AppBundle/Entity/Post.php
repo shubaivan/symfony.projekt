@@ -9,11 +9,14 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
  * @ORM\Table(name="post")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
+ * @FileStore\Uploadable
  * @ORM\HasLifecycleCallbacks()
  */
 class Post
@@ -73,6 +76,16 @@ class Post
      * @ORM\JoinTable(name="posts_tag")
      */
     protected $tag;
+
+    /**
+     * @ORM\Column(name="thumbnail_image", type="array")
+     * @Assert\File(
+     *      maxSize="20M",
+     *      maxSizeMessage="File size should not exceed {{ limit }} {{ suffix }}")
+     * @FileStore\UploadableField(mapping="thumbnail")
+     */
+    private $thumbnail;
+
     /**
      * Constructor
      */
@@ -318,4 +331,23 @@ class Post
     {
         return $this->tag;
     }
+
+    /**
+     * @param array $thumbnail
+     * @return Post
+     */
+    public function setThumbnail($thumbnail)
+    {
+        $this->thumbnail = $thumbnail;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+
 }

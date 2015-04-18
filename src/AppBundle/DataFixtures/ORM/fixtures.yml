@@ -1,0 +1,10 @@
+AppBundle\Entity\Post:
+  post{1..4}:
+    title: <word()>
+    text: <realText()>
+    author: <firstName()>
+    tag: 2x @tag*
+
+AppBundle\Entity\Tag:
+  tag{1..10}:
+    hashTag: <word()>

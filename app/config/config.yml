@@ -125,6 +125,21 @@ fos_rest:
             'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
         messages:
             'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
-#
-#nelmio_api_doc:
-#    name: Page API
+
+# iPHPFileStoreBundle Configuration
+iphp_file_store:
+    mappings:
+       # Default mapping
+       photo:
+           upload_dir:  %kernel.root_dir%/../web/uploads
+           upload_path: /uploads
+
+       # Products thumbnail preview
+       thumbnail:
+           upload_dir:  %kernel.root_dir%/../uploads/thumbnails/post
+           upload_path: /uploads/thumbnails/post
+           namer: ~
+
+hautelook_alice:
+    locale: en_US   # default
+    seed: 1         # default

@@ -28,6 +28,7 @@
                 </div>
                 <div class="text">
                     <p>{{ post.text|slice(0,400) }}...</p>
+                    {#<img src="{{ post.thumbnail.path }}" {{ post.thumbnail.height < 300 ? 'height="300"':''}}" />#}
                 </div>
             </div>
 

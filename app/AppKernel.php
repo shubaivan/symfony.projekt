@@ -21,8 +21,9 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle()
-
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Iphp\FileStoreBundle\IphpFileStoreBundle(),
+            new Hautelook\AliceBundle\HautelookAliceBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
