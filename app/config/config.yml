@@ -131,14 +131,20 @@ iphp_file_store:
     mappings:
        # Default mapping
        photo:
-           upload_dir:  %kernel.root_dir%/../web/uploads
-           upload_path: /uploads
-
-       # Products thumbnail preview
-       thumbnail:
+#           upload_dir:  photo
+#           upload_path: /photo
            upload_dir:  %kernel.root_dir%/../uploads/thumbnails/post
            upload_path: /uploads/thumbnails/post
+           directory_namer:
+               date:
+                  params: { field : date, depth : month }
            namer: ~
+#
+#       # Products thumbnail preview
+#       thumbnail:
+#           upload_dir:  %kernel.root_dir%/../uploads/thumbnails/post
+#           upload_path: /uploads/thumbnails/post
+#           namer: ~
 
 hautelook_alice:
     locale: en_US   # default

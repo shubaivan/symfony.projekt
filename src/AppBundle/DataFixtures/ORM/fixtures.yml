@@ -3,8 +3,8 @@ AppBundle\Entity\Post:
     title: <word()>
     text: <realText()>
     author: <firstName()>
-    tag: 2x @tag*
 
 AppBundle\Entity\Tag:
   tag{1..10}:
     hashTag: <word()>
+    post: 2x @post*

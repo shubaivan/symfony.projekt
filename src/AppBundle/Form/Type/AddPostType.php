@@ -24,12 +24,14 @@ class AddPostType extends AbstractType
             ->add('title')
             ->add('text')
             ->add('author')
-            ->add('thumbnail', 'file')
+            ->add('photo', 'file')
             ->add('tag', 'entity', [
                 'class' => 'AppBundle:Tag',
                 'choices' => new GetTagType($tag),
                 'multiple' => true
-            ]);
+            ])
+            ->getForm();
+
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
