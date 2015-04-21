@@ -6,11 +6,6 @@
 
 {% block content %}
     {% for fullIssue in fullIssues %}
-        <li>
-        {% for issue in fullIssues %}
-            {{ issue }}
-        </li>
+    {{ issue.project }}
     {% endfor %}
-    {% endfor %}
-
 {% endblock %}

@@ -42,7 +42,7 @@ class RedmineController extends Controller
      * @Method({"GET"})
      * @Template()
      */
-    public function redmineAction()
+    public function projectAction()
     {
         $url = 'https://redmine.ekreative.com';
         $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
@@ -62,9 +62,9 @@ class RedmineController extends Controller
 //            'limit' => 1000
 //        ]);
         var_dump($client);
-
+//
 //        return array(
-//            "client" => $client,
+//            "clients" => $client,
 //        );
     }
 
@@ -73,7 +73,7 @@ class RedmineController extends Controller
      * @Method({"GET"})
      * @Template()
      */
-    public function clientAction()
+    public function issuesAction()
     {
         $url = 'https://redmine.ekreative.com';
         $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
@@ -94,13 +94,13 @@ class RedmineController extends Controller
 
             $fullIssue = $client->api('issue')->show($issue['id'], ['include' => 'journals']);
 //            print_r($fullIssue);
-            var_dump($fullIssue);
+//            var_dump($fullIssue);
 
         }
-//                return array(
-//            "fullIssues" => $fullIssue,
-//                "issue" => $issue
-//        );
+                return array(
+            "fullIssues" => $fullIssue,
+                "issue" => $issue
+        );
     }
 
 
