@@ -18,35 +18,39 @@ use AppBundle\Service\Client;
 class RedmineController extends Controller
 {
     /**
-     * @Route("/redmine", name="redmine")
+     * @Route("/redminelib", name="redminelib")
      * @Method({"GET"})
      * @Template()
      */
-    public function indexAction()
+    public function issueAction()
     {
         $url = 'https://redmine.ekreative.com';
         $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
+        $httpAuthString = 'test';
 
-        $config = array($url, $apiKey);
-        $redmine = new Redmine($config);
+        $redmine = new Redmine($url, $apiKey, $httpAuthString);
         $redmine->getIssues("?query_id=1");
-        return array(
-            "redmine" => $redmine,
-        );
+
+        var_dump($redmine);
+//        return array(
+//            "redmine" => $redmine,
+//        );
     }
 
     /**
-     * @Route("/redminebundle", name="redmine_bundle")
+     * @Route("/project", name="project")
      * @Method({"GET"})
      * @Template()
      */
     public function redmineAction()
     {
-        $client = new \Redmine\Client('https://redmine.ekreative.com', '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c');
-//        $client = new \Redmine\Client('https://redmine.ekreative.com', 'test', '9uu82T487m6V41G');
+        $url = 'https://redmine.ekreative.com';
+        $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
+        $httpAuthString = 'test';
 
-//        $client->api('user')->all();
-        $client->api('user')->listing();
+        $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
+
+        $client->api('project')->listing();
 
 //        $client->api('issue')->create([
 //            'project_id'  => 'test',
@@ -59,13 +63,13 @@ class RedmineController extends Controller
 //        ]);
         var_dump($client);
 
-        return array(
-            "client" => $client,
-        );
+//        return array(
+//            "client" => $client,
+//        );
     }
 
     /**
-     * @Route("/client", name="redmine")
+     * @Route("/issues", name="issues")
      * @Method({"GET"})
      * @Template()
      */

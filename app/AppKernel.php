@@ -23,7 +23,8 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Iphp\FileStoreBundle\IphpFileStoreBundle(),
-            new Hautelook\AliceBundle\HautelookAliceBundle()
+            new Hautelook\AliceBundle\HautelookAliceBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

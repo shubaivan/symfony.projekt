@@ -149,3 +149,6 @@ iphp_file_store:
 hautelook_alice:
     locale: en_US   # default
     seed: 1         # default
+
+nelmio_api_doc:
+    name: Redmine

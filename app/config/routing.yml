@@ -2,5 +2,14 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
     prefix:   /
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+app_redmine:
+    type: rest
+    resource: "@AppBundle/Controller/ApiRedmineController.php"
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
