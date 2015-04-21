@@ -90,11 +90,13 @@ class RedmineController extends Controller
 
             $fullIssue = $client->api('issue')->show($issue['id'], ['include' => 'journals']);
 //            print_r($fullIssue);
+            var_dump($fullIssue);
 
         }
-                return array(
-            "fullIssue" => $fullIssue,
-        );
+//                return array(
+//            "fullIssues" => $fullIssue,
+//                "issue" => $issue
+//        );
     }
 
 

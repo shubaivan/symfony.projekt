@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block content %}
-    {% for fullIssue in fullIssue %}
+    {% for fullIssue in fullIssues %}
         <li>
-            {{ fullIssue }}
+        {% for issue in fullIssues %}
+            {{ issue }}
         </li>
+    {% endfor %}
     {% endfor %}
 
 {% endblock %}
