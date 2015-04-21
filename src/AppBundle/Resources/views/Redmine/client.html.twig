@@ -4,10 +4,11 @@
     Wall
 {% endblock %}
 
-
-
 {% block content %}
-
-    {{ redmine }}
+    {% for issueList in issueList %}
+        <li>
+            {{ issueList }}
+        </li>
+    {% endfor %}
 
 {% endblock %}
