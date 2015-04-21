@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-    {% for projekt in clients %}
+    {% for client in clients %}
         <li>
-            {{ projekt }}
+            {{ client.projects.name }}
         </li>
     {% endfor %}
 

@@ -61,11 +61,11 @@ class RedmineController extends Controller
 //        $client->api('issue')->all([
 //            'limit' => 1000
 //        ]);
-        var_dump($client);
+//        var_dump($client);
 //
-//        return array(
-//            "clients" => $client,
-//        );
+        return array(
+            "clients" => $client,
+        );
     }
 
     /**
