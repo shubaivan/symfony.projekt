@@ -83,7 +83,6 @@ class ApiRedmineController extends FOSRestController
             'limit' => 3
         ));
 
-
 //        return array(
 //            "issueList" => $issueList,
 //        );
@@ -98,6 +97,7 @@ class ApiRedmineController extends FOSRestController
             $restView->setData($fullIssue);
 
         }
+
         return $restView;
 
     }

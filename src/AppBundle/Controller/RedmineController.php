@@ -84,7 +84,6 @@ class RedmineController extends Controller
             'limit' => 3
         ));
 
-
 //        return array(
 //            "issueList" => $issueList,
 //        );
@@ -97,11 +96,11 @@ class RedmineController extends Controller
 //            var_dump($fullIssue);
 
         }
+
                 return array(
             "fullIssues" => $fullIssue,
                 "issue" => $issue
         );
     }
-
 
 }

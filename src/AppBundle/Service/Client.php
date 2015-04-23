@@ -7,7 +7,8 @@ namespace AppBundle\Service;
  * @package Fiv\Redmine
  */
 
-class Client extends \Redmine\Client {
+class Client extends \Redmine\Client
+{
     /**
      * @var int
      */
@@ -28,7 +29,8 @@ class Client extends \Redmine\Client {
      * @var int|null Redmine response code, null if request is not still completed
      */
     protected $responseCode = null;
-    public function __construct($url, $apiKey, $httpAuthString = "") {
+    public function __construct($url, $apiKey, $httpAuthString = "")
+    {
         $this->url = $url;
         $this->apiKey = $apiKey;
         $this->httpAuthString = $httpAuthString;
@@ -39,10 +41,12 @@ class Client extends \Redmine\Client {
      * @param  string $path
      * @return array
      */
-    public function get($path) {
+    public function get($path)
+    {
         if (false === $json = $this->runRequest($path, 'GET')) {
             return false;
         }
+
         return $this->decode($json);
     }
     /**
@@ -51,7 +55,8 @@ class Client extends \Redmine\Client {
      * @param  string $data
      * @return mixed
      */
-    public function post($path, $data) {
+    public function post($path, $data)
+    {
         return $this->runRequest($path, 'POST', $data);
     }
     /**
@@ -60,7 +65,8 @@ class Client extends \Redmine\Client {
      * @param  string $data
      * @return array
      */
-    public function put($path, $data) {
+    public function put($path, $data)
+    {
         return $this->runRequest($path, 'PUT', $data);
     }
     /**
@@ -68,17 +74,19 @@ class Client extends \Redmine\Client {
      * @param  string $path
      * @return array
      */
-    public function delete($path) {
+    public function delete($path)
+    {
         return $this->runRequest($path, 'DELETE');
     }
     /**
-     * @param  string $path
-     * @param  string $method
-     * @param  string $data
+     * @param  string                                     $path
+     * @param  string                                     $method
+     * @param  string                                     $data
      * @return false|\Redmine\Api\SimpleXMLElement|string
-     * @throws \Exception If anything goes wrong on curl request
+     * @throws \Exception                                 If anything goes wrong on curl request
      */
-    protected function runRequest($path, $method = 'GET', $data = '') {
+    protected function runRequest($path, $method = 'GET', $data = '')
+    {
         $this->responseCode = null;
         $curl = curl_init();
         if (!empty($this->httpAuthString)) {
@@ -141,8 +149,10 @@ class Client extends \Redmine\Client {
             if (strpos($contentType, 'application/xml') === 0) {
                 return new \Redmine\Api\SimpleXMLElement($response);
             }
+
             return $response;
         }
+
         return true;
     }
 }
