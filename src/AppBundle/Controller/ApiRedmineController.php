@@ -57,7 +57,7 @@ class ApiRedmineController extends FOSRestController
      * @ApiDoc(
      * resource = true,
      * description = "getIssues",
-     * output="array<AppBundle\Document\Dream>",
+     * output="",
      * statusCodes = {
      *      200 = "Returned when successful",
      *      404 = "Returned when the Dream is not found"
