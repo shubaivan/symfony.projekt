@@ -38,8 +38,6 @@ class AddPostType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\Post',
-            'intention' => 'appbundle_post',
-            'csrf_protection' => true
         ));
     }
 

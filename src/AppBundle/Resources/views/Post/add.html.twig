@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% block content %}
-    <form role="form" method="POST" id="create_post">
+
+    <form role="form" enctype="multipart/form-data" novalidate method="POST" id="create_post">
         <fieldset>
             <legend>Создание проекта</legend>
             <div>
@@ -31,6 +32,12 @@
             </div>
 
             <div>
+                {{ form_label(form.photo) }}
+                {{ form_widget(form.photo) }}
+                <div id="clear"></div>
+            </div>
+
+            <div>
                 {{ form_label(form.tag) }}
                 {{ form_widget(form.tag) }}
                 <div id="clear"></div>
@@ -38,9 +45,12 @@
                 {{ form_rest(form) }}
             </div>
 
+
+
             <div>
                 <input type="submit" value="создать проект">
             </div>
         </fieldset>
     </form>
+
 {% endblock %}

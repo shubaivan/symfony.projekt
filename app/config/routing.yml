@@ -13,3 +13,7 @@ app_redmine:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+app_photo:
+    pattern:  /photo/
+    defaults: { _controller: AppBundle:Photo:index }

@@ -38,11 +38,13 @@ class PostController extends Controller
 
     /**
      * @Route("/post/add", name="post_add_get")
-     * @Method({"GET", "POST"})
+     * @Method(methods={"GET", "POST"})
      * @Template()
      */
     public function addAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
         $tags = $this->getDoctrine()
             ->getManager()
             ->getRepository('AppBundle:Tag')
@@ -54,15 +56,18 @@ class PostController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            foreach ($post->getTag() as $value) {
-                $value->addPost($post);
+        if ($request->isMethod('POST')) {
+
+            if ($form->isValid()) {
+                foreach ($post->getTag() as $value) {
+                    $value->addPost($post);
+                }
+
+                $em->persist($post);
+                $em->flush();
+
+                return $this->redirect($this->get('router')->generate('blog_home'));
             }
-
-            $this->getDoctrine()->getManager()->persist($post);
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirect($this->get('router')->generate('blog_home'));
         }
 
         return array(

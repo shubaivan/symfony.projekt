@@ -78,7 +78,7 @@ class Post
     protected $tag;
 
     /**
-     * @ORM\Column(name="photo", type="array")
+     * @ORM\Column(name="thumbnail_image", type="array")
      * @Assert\File( maxSize="20M")
      * @FileStore\UploadableField(mapping="photo")
      */
@@ -95,7 +95,7 @@ class Post
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -105,7 +105,7 @@ class Post
     /**
      * Set title
      *
-     * @param  string $title
+     * @param string $title
      * @return Post
      */
     public function setTitle($title)
@@ -118,7 +118,7 @@ class Post
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
     public function getTitle()
     {
@@ -128,7 +128,7 @@ class Post
     /**
      * Set text
      *
-     * @param  string $text
+     * @param string $text
      * @return Post
      */
     public function setText($text)
@@ -141,7 +141,7 @@ class Post
     /**
      * Get text
      *
-     * @return string
+     * @return string 
      */
     public function getText()
     {
@@ -151,7 +151,7 @@ class Post
     /**
      * Set author
      *
-     * @param  string $author
+     * @param string $author
      * @return Post
      */
     public function setAuthor($author)
@@ -164,7 +164,7 @@ class Post
     /**
      * Get author
      *
-     * @return string
+     * @return string 
      */
     public function getAuthor()
     {
@@ -174,7 +174,7 @@ class Post
     /**
      * Set createdAt
      *
-     * @param  \DateTime $createdAt
+     * @param \DateTime $createdAt
      * @return Post
      */
     public function setCreatedAt($createdAt)
@@ -187,7 +187,7 @@ class Post
     /**
      * Get createdAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getCreatedAt()
     {
@@ -197,7 +197,7 @@ class Post
     /**
      * Set updatedAt
      *
-     * @param  \DateTime $updatedAt
+     * @param \DateTime $updatedAt
      * @return Post
      */
     public function setUpdatedAt($updatedAt)
@@ -210,7 +210,7 @@ class Post
     /**
      * Get updatedAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getUpdatedAt()
     {
@@ -220,7 +220,7 @@ class Post
     /**
      * Set deletedAt
      *
-     * @param  \DateTime $deletedAt
+     * @param \DateTime $deletedAt
      * @return Post
      */
     public function setDeletedAt($deletedAt)
@@ -233,7 +233,7 @@ class Post
     /**
      * Get deletedAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getDeletedAt()
     {
@@ -243,7 +243,7 @@ class Post
     /**
      * Set slugPost
      *
-     * @param  string $slugPost
+     * @param string $slugPost
      * @return Post
      */
     public function setSlugPost($slugPost)
@@ -256,7 +256,7 @@ class Post
     /**
      * Get slugPost
      *
-     * @return string
+     * @return string 
      */
     public function getSlugPost()
     {
@@ -264,9 +264,32 @@ class Post
     }
 
     /**
+     * Set photo
+     *
+     * @param array $photo
+     * @return Post
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return array 
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
      * Add issue
      *
-     * @param  \AppBundle\Entity\Issue $issue
+     * @param \AppBundle\Entity\Issue $issue
      * @return Post
      */
     public function addIssue(\AppBundle\Entity\Issue $issue)
@@ -289,7 +312,7 @@ class Post
     /**
      * Get issue
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getIssue()
     {
@@ -299,7 +322,7 @@ class Post
     /**
      * Add tag
      *
-     * @param  \AppBundle\Entity\Tag $tag
+     * @param \AppBundle\Entity\Tag $tag
      * @return Post
      */
     public function addTag(\AppBundle\Entity\Tag $tag)
@@ -322,33 +345,10 @@ class Post
     /**
      * Get tag
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getTag()
     {
         return $this->tag;
-    }
-
-    /**
-     * Set photo
-     *
-     * @param  array $photo
-     * @return Post
-     */
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
-
-    /**
-     * Get photo
-     *
-     * @return array
-     */
-    public function getPhoto()
-    {
-        return $this->photo;
     }
 }
