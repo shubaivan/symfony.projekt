@@ -38,6 +38,9 @@
         <div class="text">
             <p>{{ post.text }}</p>
         </div>
+        <div class="text">
+            <a href="{{ post.photo.path }}" target="_blank"><img src="{{ post.photo.path }}" {{ post.photo.height > 150 ? 'height="150"':''}}/></a>
+        </div>
     </div>
     <div class="comment-article">
         <h3>
