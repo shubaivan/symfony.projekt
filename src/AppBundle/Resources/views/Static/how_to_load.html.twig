@@ -1,0 +1,66 @@
+{% extends 'AppBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    Создание проекта
+{% endblock %}
+
+{% block content %}
+   <pre>
+1. Open your terminal and write
+	ssh u-YOUR_APS@ssh37.eu1.frbit.com
+	and now you conect in anothre compouter(server) in hosting
+2. cd htdocs/
+3. rm -rf index.php
+4. git clone https://github.com/YOUR_GIT_LOGIN/YOUR_REPOSITORY.git ~/htdocs/
+5. curl -sS https://getcomposer.org/installer | php
+6. php composer.phar update
+	Creating the "app/config/parameters.yml" file
+		Some parameters are missing. Please provide them.
+		database_driver (pdo_mysql):
+		database_host (127.0.0.1): YOUR_APS.mysql.eu1.frbit.com
+		database_port (null):
+		database_name (symfony): YOUR_APS
+		database_user (root): YOUR_APS
+		database_password (null): YOUR_password
+		mailer_transport (smtp):
+		mailer_host (127.0.0.1):
+		mailer_user (null):
+		mailer_password (null):
+		locale (en):
+		secret (ThisTokenIsNotSoSecretChangeIt):
+7. If you have DB
+	php app/console doctrine:schema:create
+	If ou have reload fie
+	vim bin/reload - add "php" in command
+	http://www.fprintf.net/vimCheatSheet.html
+       		require __DIR__ . '/base_script.php';
+
+			show_run("Drop DB", "php app/console doctrine:database:drop --force");
+			show_run("Create DB", "php app/console doctrine:database:create");
+			show_run("Create scheme", "php app/console doctrine:schema:create");
+			show_run("Install assets", "php app/console assets:install");
+
+			show_run("Load fixtures", "php app/console doctrine:fixtures:load --no-interaction");
+	php bin/reload
+8. If you want to use app_dev.php
+	vim web/app_dev.php
+		http://www.fprintf.net/vimCheatSheet.html
+		then push insert and write:
+		If you want to use the app_dev.php script you can either (for example) remove the check-block (right after the comment where 			it tells you to remove it if you need) or transform it to something like:
+
+			if (!(isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] == 'my-app')
+			    && (isset($_SERVER['HTTP_CLIENT_IP'])
+				|| isset($_SERVER['HTTP_X_FORWARDED_FOR'])
+				|| !in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', 'fe80::1', '::1'))
+			    )
+			) {
+			    header('HTTP/1.0 403 Forbidden');
+			    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
+			}
+		then push ESC
+		:wq сохр выйти
+	vim web/.htaccess
+		change app.php -> app_dev.php
+9. Wait for ten seconds. That's all. Enjoy
+   </pre>
+{% endblock %}

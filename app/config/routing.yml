@@ -3,6 +3,14 @@ app:
     type:     annotation
     prefix:   /
 
+app_how_to_load:
+    pattern: /how_to_load
+    defaults:
+        _controller:  FrameworkBundle:Template:template
+        template:     'AppBundle:Static:how_to_load.html.twig'
+        maxAge:       86400
+        sharedMaxAge: 86400
+
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
