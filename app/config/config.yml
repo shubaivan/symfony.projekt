@@ -90,6 +90,25 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
 
+#hwi_oauth:
+#    connect:
+#      account_connector: app.provider.user_provider
+#      confirmation: false
+#      # name of the firewall in which this bundle is active, this setting MUST be set
+#    firewall_name: main
+#    fosub:
+#        username_iterations: 30
+#        properties:
+#            # these properties will be used/redefined later in the custom FOSUBUserProvider service.
+#            facebook: facebookId
+#
+#    resource_owners:
+#        facebook:
+#            type:                facebook
+#            client_id:           "%facebook_app_id%"
+#            client_secret:       "%facebook_app_secret%"
+#            scope:               "user_photos"
+
 fos_rest:
     param_fetcher_listener: true
     body_listener: true
