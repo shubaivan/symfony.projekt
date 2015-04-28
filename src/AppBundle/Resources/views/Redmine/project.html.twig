@@ -5,10 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    {% for client in clients %}
+    {% for project in projects %}
+        {% for a in project %}
+            {% for b in a %}
+                {% for c in b %}
+                    {% for d in c %}
         <li>
-            {{ client.projects.name }}
+            {{ d }}
         </li>
     {% endfor %}
+                 {% endfor %}
+                    {% endfor %}
+                        {% endfor %}
+                            {% endfor %}
 
 {% endblock %}

@@ -18,26 +18,6 @@ use AppBundle\Service\Client;
 class RedmineController extends Controller
 {
     /**
-     * @Route("/redminelib", name="redminelib")
-     * @Method({"GET"})
-     * @Template()
-     */
-    public function issueAction()
-    {
-        $url = 'https://redmine.ekreative.com';
-        $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
-        $httpAuthString = 'test';
-
-        $redmine = new Redmine($url, $apiKey, $httpAuthString);
-        $redmine->getIssues("?query_id=1");
-
-        var_dump($redmine);
-//        return array(
-//            "redmine" => $redmine,
-//        );
-    }
-
-    /**
      * @Route("/project", name="project")
      * @Method({"GET"})
      * @Template()
@@ -50,21 +30,12 @@ class RedmineController extends Controller
 
         $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
 
-        $client->api('project')->listing();
+        $project = $client->api('project')->all();
 
-//        $client->api('issue')->create([
-//            'project_id'  => 'test',
-//            'subject'     => 'some subject',
-//            'description' => 'a long description blablabla',
-//            'assigned_to' => 'user1',
-//        ]);
-//        $client->api('issue')->all([
-//            'limit' => 1000
-//        ]);
-//        var_dump($client);
-//
+        var_dump($project);
+
         return array(
-            "clients" => $client,
+            "projects" => $project,
         );
     }
 
@@ -80,27 +51,29 @@ class RedmineController extends Controller
         $httpAuthString = 'test';
 
         $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
-        $issueList = $client->api('issue')->all(array(
-            'limit' => 3
-        ));
+        $issueList = $client->api('issue')->all(array());
 
-//        return array(
-//            "issueList" => $issueList,
-//        );
-
+//        $client->api('issue')->create([
+//            'project_id'  => 'test',
+//            'subject'     => 'some subject',
+//            'description' => 'a long description blablabla',
+//            'assigned_to' => 'user1',
+//        ]);
+//        $client->api('issue')->all([
+//            'limit' => 1000
+//        ]);
 
         foreach ($issueList['issues'] as $issue) {
 
             $fullIssue = $client->api('issue')->show($issue['id'], ['include' => 'journals']);
 //            print_r($fullIssue);
-//            var_dump($fullIssue);
+            var_dump($fullIssue);
 
         }
 
                 return array(
-            "fullIssues" => $fullIssue,
-                "issue" => $issue
+            "fullIssues" => $fullIssue
         );
-    }
 
+    }
 }
