@@ -5,7 +5,7 @@ namespace UserBundle\Providers;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use UserBundle\Entity\User;
 
-class   FacebookProvider
+class FacebookProvider
 {
     /**
      * setUserData - This method use Facebook GraphAPI for get and set User data
@@ -17,7 +17,7 @@ class   FacebookProvider
     public function setUserData(User $user, UserResponseInterface $response)
     {
         $arrResponse = $response->getResponse();
-        $userEmail = $response->getEmail();
+
         $userFirstName = strstr($response->getRealName(), ' ', true);
         $userLastName = str_replace(' ', '', strstr($response->getRealName(), ' '));
         // Prepare new User object before adding to database

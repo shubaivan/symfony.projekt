@@ -39,7 +39,6 @@ class User extends BaseUser
      */
     protected $socialNetworkUrl;
     /**
-     * @var string|null
      * @ORM\Column(type="string")
      */
     protected $facebookId;
@@ -47,6 +46,11 @@ class User extends BaseUser
      * @ORM\Column(type="string")
      */
     protected $facebookAccessToken;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Post", inversedBy="author")
+     */
+    protected $posts;
 
 //    /**
 //     * @ORM\Column(type="string")
@@ -59,6 +63,7 @@ class User extends BaseUser
 //    protected $vkontakteAccessToken;
 
 
+   
     /**
      * Set firstName
      *
@@ -228,50 +233,36 @@ class User extends BaseUser
     }
 
     /**
-     * Set vkontakteId
+     * Add post
      *
-     * @param string $vkontakteId
+     * @param \AppBundle\Entity\Post $post
      *
      * @return User
      */
-    public function setVkontakteId($vkontakteId)
+    public function addPost(\AppBundle\Entity\Post $post)
     {
-        $this->vkontakteId = $vkontakteId;
+        $this->posts[] = $post;
 
         return $this;
     }
 
     /**
-     * Get vkontakteId
+     * Remove post
      *
-     * @return string
+     * @param \AppBundle\Entity\Post $post
      */
-    public function getVkontakteId()
+    public function removePost(\AppBundle\Entity\Post $post)
     {
-        return $this->vkontakteId;
+        $this->posts->removeElement($post);
     }
 
     /**
-     * Set vkontakteAccessToken
+     * Get posts
      *
-     * @param string $vkontakteAccessToken
-     *
-     * @return User
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setVkontakteAccessToken($vkontakteAccessToken)
+    public function getPosts()
     {
-        $this->vkontakteAccessToken = $vkontakteAccessToken;
-
-        return $this;
-    }
-
-    /**
-     * Get vkontakteAccessToken
-     *
-     * @return string
-     */
-    public function getVkontakteAccessToken()
-    {
-        return $this->vkontakteAccessToken;
+        return $this->posts;
     }
 }

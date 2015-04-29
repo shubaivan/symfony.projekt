@@ -18,13 +18,14 @@ class UserController extends Controller
     public function updateContactsAction(Request $request)
     {
         $userAuth = $this->getUser();
+//        var_dump($userAuth);
 
         if (!$userAuth) {
             return $this->redirect($this->generateUrl('blog_home'));
         }
 
-        $dm = $this->get('doctrine.orm.entity_manager');
-        $user = $dm->getRepository('UserBundle:User')->findOneById($userAuth->getId());
+        $em = $this->get('doctrine.orm.entity_manager');
+        $user = $em->getRepository('UserBundle:User')->findOneById($userAuth->getId());
 
         if (strstr($user->getEmail(),'@example.com')) {
             $user->setEmail('');
@@ -35,7 +36,7 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $dm->flush();
+            $em->flush();
 
             $router = $this->generateUrl("blog_home");
 

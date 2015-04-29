@@ -23,7 +23,7 @@ class AddPostType extends AbstractType
         $builder
             ->add('title')
             ->add('text')
-            ->add('author')
+
             ->add('photo', 'file')
             ->add('tag', 'entity', [
                 'class' => 'AppBundle:Tag',

@@ -46,7 +46,8 @@
 	vim web/app_dev.php</pre>
 	<a href="http://www.fprintf.net/vimCheatSheet.html">vimCheatSheet</a><pre>
 		then push insert and write:
-		If you want to use the app_dev.php script you can either (for example) remove the check-block (right after the comment where 			it tells you to remove it if you need) or transform it to something like:
+		If you want to use the app_dev.php script you can either (for example) remove the check-block (right after the comment where
+		it tells you to remove it if you need) or transform it to something like:
 
 			if (!(isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] == 'my-app')
 			    && (isset($_SERVER['HTTP_CLIENT_IP'])

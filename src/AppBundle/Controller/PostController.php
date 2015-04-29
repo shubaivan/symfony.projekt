@@ -62,6 +62,7 @@ class PostController extends Controller
                 foreach ($post->getTag() as $value) {
                     $value->addPost($post);
                 }
+                $post->setAuthor($this->getUser());
 
                 $em->persist($post);
                 $em->flush();

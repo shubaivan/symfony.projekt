@@ -12,7 +12,7 @@ class UpdateProfileType extends AbstractType
     {
         $builder
             ->add('firstName')
-            ->add('secondName')
+            ->add('lastName')
             ->add('username')
             ->add('email');
     }
