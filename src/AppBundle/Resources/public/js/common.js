@@ -19,8 +19,8 @@ $(document).on('submit', '#comment_add', function(e){
                         "<div class='comment'>" +
                             "<div class='info-block'>" +
                                 "<p>" +
-                                    "Додано користувачем: <b>" + data[i].author + "</b></br>" +
-                                    "Дата створення: <b>" + data[i].createdAt + "</b>" +
+                                    "Добавил автор: <b>" + data[i].author + "</b></br>" +
+                                    "Дата создания: <b>" + data[i].createdAt + "</b>" +
                                 "</p>" +
                             "</div>" +
 
