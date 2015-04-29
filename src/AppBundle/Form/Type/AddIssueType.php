@@ -9,7 +9,6 @@ class AddIssueType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('author')
             ->add('text', 'textarea');
     }
 

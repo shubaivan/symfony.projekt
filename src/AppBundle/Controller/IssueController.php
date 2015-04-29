@@ -28,6 +28,7 @@ class IssueController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $issue->setAuthor($this->getUser());
             $issue->setPost($this->getDoctrine()->getRepository('AppBundle:Post')->findOneBySlugPost($slug));
 
             $em = $this->getDoctrine()->getManager();
@@ -39,7 +40,7 @@ class IssueController extends Controller
             $issues = array();
 
             for ($i = 0; $i < count($post[0]->getIssue()); $i++) {
-                $issues[$i]["author"] = $post[0]->getIssue()[$i]->getAuthor();
+
                 $issues[$i]["text"] = $post[0]->getIssue()[$i]->getText();
                 $issues[$i]["createdAt"] = $post[0]->getIssue()[$i]->getCreatedAt()->format("d.m.Y H:i:s");
             }

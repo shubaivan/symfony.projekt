@@ -24,7 +24,7 @@ class Issue
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=200)
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="issue")
      */
     protected $author;
 
@@ -44,6 +44,7 @@ class Issue
      * @ORM\JoinColumn(name="post_id", referencedColumnName="id")
      */
     protected $post;
+
     /**
      * Get id
      *
@@ -55,32 +56,10 @@ class Issue
     }
 
     /**
-     * Set author
-     *
-     * @param  string $author
-     * @return Issue
-     */
-    public function setAuthor($author)
-    {
-        $this->author = $author;
-
-        return $this;
-    }
-
-    /**
-     * Get author
-     *
-     * @return string
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
      * Set text
      *
-     * @param  string $text
+     * @param string $text
+     *
      * @return Issue
      */
     public function setText($text)
@@ -99,10 +78,12 @@ class Issue
     {
         return $this->text;
     }
+
     /**
      * Set createdAt
      *
-     * @param  \DateTime $createdAt
+     * @param \DateTime $createdAt
+     *
      * @return Issue
      */
     public function setCreatedAt($createdAt)
@@ -123,9 +104,35 @@ class Issue
     }
 
     /**
+     * Set author
+     *
+     * @param \UserBundle\Entity\User $author
+     *
+     * @return Issue
+     */
+    public function setAuthor(\UserBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+        $author->addIssue($this);
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
      * Set post
      *
-     * @param  \AppBundle\Entity\Post $post
+     * @param \AppBundle\Entity\Post $post
+     *
      * @return Issue
      */
     public function setPost(\AppBundle\Entity\Post $post = null)

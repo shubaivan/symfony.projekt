@@ -52,6 +52,11 @@ class User extends BaseUser
      */
     protected $posts;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Issue", inversedBy="author")
+     */
+    protected $issue;
+
 //    /**
 //     * @ORM\Column(type="string")
 //     */
@@ -264,5 +269,39 @@ class User extends BaseUser
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * Add issue
+     *
+     * @param \AppBundle\Entity\Issue $issue
+     *
+     * @return User
+     */
+    public function addIssue(\AppBundle\Entity\Issue $issue)
+    {
+        $this->issue[] = $issue;
+
+        return $this;
+    }
+
+    /**
+     * Remove issue
+     *
+     * @param \AppBundle\Entity\Issue $issue
+     */
+    public function removeIssue(\AppBundle\Entity\Issue $issue)
+    {
+        $this->issue->removeElement($issue);
+    }
+
+    /**
+     * Get issue
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIssue()
+    {
+        return $this->issue;
     }
 }

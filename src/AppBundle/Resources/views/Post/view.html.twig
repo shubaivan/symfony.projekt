@@ -75,9 +75,6 @@
         <div>
             <h3>создать вопрос:</h3>
             <form id="comment_add" role="form" action="{{ path("issue_add", {"slug" : post.slugPost}) }}" method="POST">
-                <div>
-                    {{ form_row(form.author) }}
-                </div>
 
                 <div class="text">
                     {{ form_row(form.text) }}
