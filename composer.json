@@ -21,12 +21,14 @@
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "stof/doctrine-extensions-bundle": "1.2.*@dev",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
+        "friendsofsymfony/rest-bundle": "~1.4",
         "kbsali/redmine-api": "dev-master",
-        "friendsofsymfony/rest-bundle": "1.5.*@dev",
+        "friendsofsymfony/user-bundle": "2.0.*@dev",
         "jms/serializer-bundle": "@dev",
         "nelmio/api-doc-bundle": "@dev",
         "iphp/filestore-bundle": "dev-master",
-        "hautelook/alice-bundle": "dev-master"
+        "hautelook/alice-bundle": "dev-master",
+        "hwi/oauth-bundle": "0.4.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

@@ -8,16 +8,10 @@
     {% for fullIssue in fullIssues %}
         {% for a in fullIssue %}
             {% for b in a %}
-                {% for c in b %}
-                    {% for d in c %}
-                        {% for e in d %}
-                            <li>
-                                {{ e }}
-                            </li>
+                <li>
+                   {{ b }}
+                </li>
     {% endfor %}
         {% endfor %}
             {% endfor %}
-                {% endfor %}
-                    {% endfor %}
-                        {% endfor %}
 {% endblock %}

@@ -1,0 +1,22 @@
+<div class="column col-sm-3" id="sidebar" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+    <div class="sidebar-module">
+        <h4>Увійти:</h4>
+        {% if app.user %}
+            <div>
+                <img src="{{ app.user.profileAvatar }}" />
+                <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a>   |
+                <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+            </div>
+        {% else %}
+            <div>
+                <a class="logo" href="{{ path('hwi_oauth_service_redirect', {'service' : 'vkontakte'}) }}">Вк</a>
+            </div>
+
+
+            <div>
+                <a class="logo" href="{{ path('hwi_oauth_service_redirect', {'service' : 'facebook'}) }}">Fa</a>
+            </div>
+        {% endif %}
+    </div>
+</div>

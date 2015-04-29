@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Iphp\FileStoreBundle\IphpFileStoreBundle(),
             new Hautelook\AliceBundle\HautelookAliceBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             new UserBundle\UserBundle(),
         );
 

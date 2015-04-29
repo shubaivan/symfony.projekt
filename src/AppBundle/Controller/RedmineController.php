@@ -49,31 +49,20 @@ class RedmineController extends Controller
         $url = 'https://redmine.ekreative.com';
         $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
         $httpAuthString = 'test';
-
         $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
-        $issueList = $client->api('issue')->all(array());
-
-//        $client->api('issue')->create([
-//            'project_id'  => 'test',
-//            'subject'     => 'some subject',
-//            'description' => 'a long description blablabla',
-//            'assigned_to' => 'user1',
-//        ]);
-//        $client->api('issue')->all([
-//            'limit' => 1000
-//        ]);
-
+        $issueList = $client->api('issue')->all(array(
+            'limit' => 3
+        ));
+//        return array(
+//            "issueList" => $issueList,
+//        );
         foreach ($issueList['issues'] as $issue) {
-
-            $fullIssue = $client->api('issue')->show($issue['id'], ['include' => 'journals']);
+            $fullIssue = $client->api('issue')->show($issue['id']);
 //            print_r($fullIssue);
             var_dump($fullIssue);
-
         }
-
-                return array(
-            "fullIssues" => $fullIssue
+        return array(
+            "fullIssues" => $fullIssue,
         );
-
     }
 }
