@@ -39,11 +39,11 @@ class User extends BaseUser
      */
     protected $socialNetworkUrl;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $facebookId;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $facebookAccessToken;
 
@@ -57,15 +57,15 @@ class User extends BaseUser
      */
     protected $issue;
 
-//    /**
-//     * @ORM\Column(type="string")
-//     */
-//    protected $vkontakteId;
-//
-//    /**
-//     * @ORM\Column(type="string")
-//     */
-//    protected $vkontakteAccessToken;
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $vkontakteId;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $vkontakteAccessToken;
 
 
    
@@ -303,5 +303,53 @@ class User extends BaseUser
     public function getIssue()
     {
         return $this->issue;
+    }
+
+    /**
+     * Set vkontakteId
+     *
+     * @param string $vkontakteId
+     *
+     * @return User
+     */
+    public function setVkontakteId($vkontakteId)
+    {
+        $this->vkontakteId = $vkontakteId;
+
+        return $this;
+    }
+
+    /**
+     * Get vkontakteId
+     *
+     * @return string
+     */
+    public function getVkontakteId()
+    {
+        return $this->vkontakteId;
+    }
+
+    /**
+     * Set vkontakteAccessToken
+     *
+     * @param string $vkontakteAccessToken
+     *
+     * @return User
+     */
+    public function setVkontakteAccessToken($vkontakteAccessToken)
+    {
+        $this->vkontakteAccessToken = $vkontakteAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get vkontakteAccessToken
+     *
+     * @return string
+     */
+    public function getVkontakteAccessToken()
+    {
+        return $this->vkontakteAccessToken;
     }
 }

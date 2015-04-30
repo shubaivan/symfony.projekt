@@ -40,9 +40,9 @@ hwi_oauth_redirect:
 
 facebook_check:
   pattern: /login/check-facebook
-#
-#vkontakte_check:
-#  pattern: /login/check-vkontakte
+
+vkontakte_check:
+  pattern: /login/check-vkontakte
 
 user_update_profile:
   pattern: /profile/update

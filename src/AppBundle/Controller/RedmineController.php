@@ -50,9 +50,7 @@ class RedmineController extends Controller
         $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
         $httpAuthString = 'test';
         $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
-        $issueList = $client->api('issue')->all(array(
-            'limit' => 3
-        ));
+        $issueList = $client->api('issue')->all(array());
 //        return array(
 //            "issueList" => $issueList,
 //        );

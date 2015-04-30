@@ -33,6 +33,7 @@ class FacebookProvider
             ->setPassword(md5($response->getAccessToken()))
             ->setProfileAvatar('http://graph.facebook.com/' . $response->getUsername() . '/picture?width=250&height=250')
             ->setRoles(array('ROLE_USER'));
+
         return $user;
     }
 }

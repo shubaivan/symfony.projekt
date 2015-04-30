@@ -101,7 +101,7 @@ hwi_oauth:
         properties:
             # these properties will be used/redefined later in the custom FOSUBUserProvider service.
             facebook: facebookId
-
+            vkontakte: vkontakteId
     resource_owners:
         facebook:
             type:                facebook
