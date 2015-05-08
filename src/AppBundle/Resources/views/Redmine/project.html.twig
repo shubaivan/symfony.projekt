@@ -5,18 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    {% for project in projects %}
-        {% for a in project %}
-            {% for b in a %}
-                {% for c in b %}
-                    {% for d in c %}
-        <li>
-            {{ d }}
-        </li>
+    {% for name in projectListName %}
+        {{ name }} <br>
     {% endfor %}
-                 {% endfor %}
-                    {% endfor %}
-                        {% endfor %}
-                            {% endfor %}
 
 {% endblock %}
