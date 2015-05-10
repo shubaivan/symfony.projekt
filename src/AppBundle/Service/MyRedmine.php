@@ -31,6 +31,7 @@ class MyRedmine extends Controller
             }
 
         }
+
         return $projectListName;
     }
 
@@ -54,6 +55,7 @@ class MyRedmine extends Controller
                 }
             }
         }
+
         return  $issuesList;
     }
 
@@ -69,7 +71,7 @@ class MyRedmine extends Controller
 
         foreach ($issueList['issues'] as $issue) {
 
-            foreach ($issue['project'] as $key => $issueNameProject){
+            foreach ($issue['project'] as $key => $issueNameProject) {
 
                 if ($key == 'name') {
 //                            dump($issueNameProject);
@@ -78,6 +80,7 @@ class MyRedmine extends Controller
             }
 //            dump($issueNameAllProject);
         }
+
         return  $issueNameAllProject;
     }
 }

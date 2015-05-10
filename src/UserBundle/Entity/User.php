@@ -4,7 +4,6 @@ namespace UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\Null;
 
 /**
  * @ORM\Entity
@@ -67,8 +66,6 @@ class User extends BaseUser
      */
     protected $vkontakteAccessToken;
 
-
-   
     /**
      * Set firstName
      *

@@ -13,7 +13,6 @@ class VkontakteProvider
         $responseArray = $response->getResponse();
         $email = $response->getEmail();
 
-
 //        dump($response, $email); exit;
         $user->setFirstName($responseArray['response'][0]['first_name']);
         $user->setLastName($responseArray['response'][0]['last_name']);

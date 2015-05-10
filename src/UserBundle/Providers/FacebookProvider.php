@@ -10,8 +10,8 @@ class FacebookProvider
     /**
      * setUserData - This method use Facebook GraphAPI for get and set User data
      *
-     * @param User $user
-     * @param UserResponseInterface $response
+     * @param  User                  $user
+     * @param  UserResponseInterface $response
      * @return User
      */
     public function setUserData(User $user, UserResponseInterface $response)

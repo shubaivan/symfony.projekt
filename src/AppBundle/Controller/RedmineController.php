@@ -41,6 +41,7 @@ class RedmineController extends Controller
 
         $nameProject = $this->get('my_redmine');
         $issueNameAllProject = $nameProject->projectIssue();
+
         return array(
             "issuesList" => $issuesList,
             "issueNameAllProject" => $issueNameAllProject,
@@ -85,15 +86,13 @@ class RedmineController extends Controller
 //            'watcher_user_ids' => array(),
         ));
 
-        if( $ret instanceof SimpleXMLElement ){
+        if ($ret instanceof SimpleXMLElement) {
             //look in the Object
             var_dump($ret);
-        }
-        else{
-            if( $ret === true ){
+        } else {
+            if ($ret === true) {
                 echo "success";
-            }
-            else{
+            } else {
                 echo "error";
             }
         }
