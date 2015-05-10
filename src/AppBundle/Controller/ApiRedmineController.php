@@ -40,21 +40,53 @@ class ApiRedmineController extends FOSRestController
      */
     public function getAllIssueAction()
     {
-        $url = 'https://redmine.ekreative.com';
-        $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
-        $httpAuthString = 'test';
+        $issue = $this->get('my_redmine');
+        $issuesList = $issue->Issue();
 
-        $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
-        $issueList = $client->api('issue')->all(array());
+        $nameProject = $this->get('my_redmine');
+        $issueNameAllProject = $nameProject->projectIssue();
+//
+//        return array(
+//            "issuesList" => $issuesList,
+//            "issueNameAllProject" => $issueNameAllProject,
+//        );
 
         $restView = View::create();
 
-        foreach ($issueList['issues'] as $issue) {
+        $restView->setData([$issuesList, $issueNameAllProject]);
 
-            $fullIssue = $client->api('issue')->show($issue['id'], ['include' => 'journals']);
-            $restView->setData($fullIssue);
+        return $restView;
+    }
 
-        }
+    /**
+     * Gets name Projects,
+     *
+     * @ApiDoc(
+     * resource = true,
+     * description = "get name Project",
+     * output="",
+     * statusCodes = {
+     *      200 = "Returned when successful",
+     *      404 = "Returned when the Project is not found"
+     * },
+     * section="All name Project "
+     * )
+     *
+     *
+     * RestView()
+     * @param
+     * @return View
+     *
+     * @throws NotFoundHttpException when not exist
+     */
+    public function getAllProjectAction()
+    {
+        $name = $this->get('my_redmine');
+        $projectListName = $name->Name();
+
+        $restView = View::create();
+
+        $restView->setData($projectListName);
 
         return $restView;
     }
