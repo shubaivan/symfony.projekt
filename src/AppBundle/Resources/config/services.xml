@@ -7,12 +7,16 @@
         <parameter key="redmine">AppBundle\Service\Redmine</parameter>
         <parameter key="client">AppBundle\Service\Client</parameter>
         <parameter key="this_my_redmine">AppBundle\Service\MyRedmine</parameter>
+
+        <parameter key="url">https://redmine.ekreative.com</parameter>
+        <parameter key="apikey">2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c</parameter>
     </parameters>
 
     <services>
 
         <service id="redmine" class="%redmine%">
-
+            <argument>%url%</argument>
+            <argument>%apikey%</argument>
         </service>
 
         <service id="my_redmine" class="%this_my_redmine%">
