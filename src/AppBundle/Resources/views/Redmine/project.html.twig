@@ -1,12 +1,12 @@
 {% extends "AppBundle:Layouts:main.html.twig" %}
 
 {% block title %}
-    Wall
+    Project
 {% endblock %}
 
 {% block content %}
     {% for name in projectListName %}
-        {{ name }} <br>
+        <p>Project Name:</p> <li>{{ name }}</li> <br>
     {% endfor %}
 
 {% endblock %}

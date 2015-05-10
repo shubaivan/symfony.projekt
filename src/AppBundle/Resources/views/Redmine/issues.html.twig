@@ -1,7 +1,7 @@
 {% extends "AppBundle:Layouts:main.html.twig" %}
 
 {% block title %}
-    Wall
+    Issue
 {% endblock %}
 
 {% block content %}
@@ -10,8 +10,8 @@
 
         {% for nameProject in issueNameAllProject %}
             <p>Block</p>
-            <div>Issue description</div> <li>{{ description }}</li>
-            <div>Name Project</div> <li>{{ nameProject }}</li> <br>
+            <div>Issue description:</div> <li>{{ description }}</li>
+            <div>Name Project:</div> <li>{{ nameProject }}</li> <br>
 
         {% endfor %}
 
