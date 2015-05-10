@@ -6,16 +6,16 @@
     <parameters>
         <parameter key="redmine">AppBundle\Service\Redmine</parameter>
         <parameter key="client">AppBundle\Service\Client</parameter>
-        <parameter key="project">AppBundle\Service\Project</parameter>
+        <parameter key="this_my_redmine">AppBundle\Service\MyRedmine</parameter>
     </parameters>
 
     <services>
 
-        <service id="my_redmine" class="%redmine%">
+        <service id="redmine" class="%redmine%">
 
         </service>
 
-        <service id="my_project" class="%project%">
+        <service id="my_redmine" class="%this_my_redmine%">
 
         </service>
 

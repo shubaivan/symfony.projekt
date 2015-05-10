@@ -21,7 +21,7 @@ class RedmineController extends Controller
      */
     public function projectAction()
     {
-        $name = $this->get('my_project');
+        $name = $this->get('my_redmine');
         $projectListName = $name->Name();
 
         return array(
@@ -36,38 +36,11 @@ class RedmineController extends Controller
      */
     public function issuesAction()
     {
-        $issuesList = array();
-        $issueNameAllProject = array();
+        $issue = $this->get('my_redmine');
+        $issuesList = $issue->Issue();
 
-        $url = 'https://redmine.ekreative.com';
-        $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
-        $httpAuthString = 'test';
-        $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
-        $issueList = $client->api('issue')->all(array());
-
-        dump($issueList);
-        foreach ($issueList['issues'] as $issue) {
-
-            foreach ($issue as $key => $issueDescription) {
-                if ($key == 'description') {
-//                        dump($issueDescription);
-                    array_push($issuesList, $issueDescription);
-                }
-
-            }
-        }
-
-        foreach ($issueList['issues'] as $issue) {
-
-                foreach ($issue['project'] as $key => $issueNameProject){
-
-                    if ($key == 'name') {
-//                            dump($issueNameProject);
-                        array_push($issueNameAllProject, $issueNameProject);
-                    }
-                }
-//            dump($issueNameAllProject);
-        }
+        $nameProject = $this->get('my_redmine');
+        $issueNameAllProject = $nameProject->projectIssue();
         return array(
             "issuesList" => $issuesList,
             "issueNameAllProject" => $issueNameAllProject,
