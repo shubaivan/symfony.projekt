@@ -21,10 +21,6 @@ fos_user_change_password:
 #HWIOAUTHBUNDLE
 #HWIOAuthBundle routes
 
-hwi_oauth_service_redirect:
-  pattern: /connect/{service}
-  defaults: { _controller: GeekhubUserBundle:Connect:redirectToService }
-
 hwi_oauth_security:
   resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
   prefix: /login

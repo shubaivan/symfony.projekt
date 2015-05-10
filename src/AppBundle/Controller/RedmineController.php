@@ -10,11 +10,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route as Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method as Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Service\Redmine;
-use AppBundle\Service\Client;
-use AppBundle\Service\Project;
 
 class RedmineController extends Controller
 {
@@ -40,21 +36,41 @@ class RedmineController extends Controller
      */
     public function issuesAction()
     {
+        $issuesList = array();
+        $issueNameAllProject = array();
+
         $url = 'https://redmine.ekreative.com';
         $apiKey = '2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c';
         $httpAuthString = 'test';
         $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
         $issueList = $client->api('issue')->all(array());
-//        return array(
-//            "issueList" => $issueList,
-//        );
+
+        dump($issueList);
         foreach ($issueList['issues'] as $issue) {
-            $fullIssue = $client->api('issue')->show($issue['id']);
-//            print_r($fullIssue);
-            var_dump($fullIssue);
+
+            foreach ($issue as $key => $issueDescription) {
+                if ($key == 'description') {
+//                        dump($issueDescription);
+                    array_push($issuesList, $issueDescription);
+                }
+
+            }
+        }
+
+        foreach ($issueList['issues'] as $issue) {
+
+                foreach ($issue['project'] as $key => $issueNameProject){
+
+                    if ($key == 'name') {
+//                            dump($issueNameProject);
+                        array_push($issueNameAllProject, $issueNameProject);
+                    }
+                }
+//            dump($issueNameAllProject);
         }
         return array(
-            "fullIssues" => $fullIssue,
+            "issuesList" => $issuesList,
+            "issueNameAllProject" => $issueNameAllProject,
         );
     }
 

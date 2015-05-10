@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    {% for fullIssue in fullIssues %}
-        {% for a in fullIssue %}
-            {% for b in a %}
-                <li>
-                   {{ b }}
-                </li>
-    {% endfor %}
+
+    {% for description in issuesList %}
+
+        {% for nameProject in issueNameAllProject %}
+            <div>Issue description</div> <li>{{ description }}</li>
+            <div>Name Project</div> <li>{{ nameProject }}</li> <br>
+
         {% endfor %}
-            {% endfor %}
+
+    {% endfor %}
+
 {% endblock %}

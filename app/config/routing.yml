@@ -23,8 +23,6 @@ app_redmine:
     type: rest
     resource: "@AppBundle/Controller/ApiRedmineController.php"
 
-
-
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
     prefix:   /connect
