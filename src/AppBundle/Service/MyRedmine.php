@@ -45,7 +45,7 @@ class MyRedmine extends Controller
         $client = new \Redmine\Client($url, $apiKey, $httpAuthString);
         $issueList = $client->api('issue')->all(array());
 
-        dump($issueList);
+//        dump($issueList);
         foreach ($issueList['issues'] as $issue) {
 
             foreach ($issue as $key => $issueDescription) {

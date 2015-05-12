@@ -10,6 +10,7 @@
 /vendor/
 /bin/*
 !/bin/reload
+!/bin/cache
 !/bin/base_script.php
 /composer.phar
 /composer.phar

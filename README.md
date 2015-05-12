@@ -9,7 +9,7 @@ Symfony projekt Wall is simple web application for showing basic statistics info
 What's inside?
 --------------
 
-The GitStats is uses with the following libraries and bundles:
+The Wall Redmine is uses with the following libraries and bundles:
 
 
 
