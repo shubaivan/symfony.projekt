@@ -4,7 +4,7 @@ Wall Redmine
 travis[![Build Status](https://travis-ci.org/shubaivan/symfony.projekt.svg?branch=develop)](https://travis-ci.org/shubaivan/symfony.projekt)
 scrutinizer[![Build Status](https://scrutinizer-ci.com/g/shubaivan/symfony.projekt/badges/build.png?b=develop)](https://scrutinizer-ci.com/g/shubaivan/symfony.projekt/build-status/develop)
 
-Symfony projekt Wall is simple web application for showing basic statistics information about and Project and Issue for project in Redmine Tracker . This application developed on Symfony2 Framework.
+Symfony projekt Wall Redmine is simple web application for showing basic statistics information about and Project and Issue for project in Redmine Tracker . This application developed on Symfony2 Framework.
 
 What's inside?
 --------------
