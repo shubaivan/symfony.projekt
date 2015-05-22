@@ -83,7 +83,11 @@
                 "database_port": "DATABASE_PORT",
                 "database_name": "DATABASE_NAME",
                 "database_user": "DATABASE_USER",
-                "database_password": "DATABASE_PASSWORD"
+                "database_password": "DATABASE_PASSWORD",
+                "vkontakte_app_id": "vkontakte_app_id",
+                "vkontakte_app_secret": "vkontakte_app_secret",
+                "facebook_app_id": "facebook_app_id",
+                "facebook_app_secret": "facebook_app_secret"
             }
         },
         "branch-alias": {
