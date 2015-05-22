@@ -31,7 +31,8 @@
         "nelmio/api-doc-bundle": "@dev",
         "iphp/filestore-bundle": "dev-master",
         "hautelook/alice-bundle": "dev-master",
-        "hwi/oauth-bundle": "0.4.*@dev"
+        "hwi/oauth-bundle": "0.4.*@dev",
+        "sensio/generator-bundle": "~2.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
