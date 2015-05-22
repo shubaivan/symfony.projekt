@@ -16,7 +16,8 @@ class TagRepository extends EntityRepository
     {
         $tags = $this->getEntityManager()->getRepository('AppBundle:Tag')
             ->createQueryBuilder('t')
-            ->groupBy('t.hashTag')
+//            ->groupBy('t.hashTag')
+            ->orderBy('t.hashTag')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult();
