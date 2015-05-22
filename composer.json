@@ -84,10 +84,10 @@
                 "database_name": "DATABASE_NAME",
                 "database_user": "DATABASE_USER",
                 "database_password": "DATABASE_PASSWORD",
-                "vkontakte_app_id": "vkontakte_app_id",
-                "vkontakte_app_secret": "vkontakte_app_secret",
-                "facebook_app_id": "facebook_app_id",
-                "facebook_app_secret": "facebook_app_secret"
+                "vkontakte_app_id": "VKONTAKTE_APP_ID",
+                "vkontakte_app_secret": "VKONTAKTE_APP_SECRET",
+                "facebook_app_id": "FACEBOOK_APP_ID",
+                "facebook_app_secret": "FACEBOOK_APP_SECRET"
             }
         },
         "branch-alias": {
