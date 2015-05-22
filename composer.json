@@ -32,10 +32,10 @@
         "iphp/filestore-bundle": "dev-master",
         "hautelook/alice-bundle": "dev-master",
         "hwi/oauth-bundle": "0.4.*@dev",
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "2.5.3"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "2.5.*@dev"
     },
     "scripts": {
         "pre-install-cmd": [
